@@ -25,7 +25,7 @@ for (let el of input) {
         escapeCounter++;
         idx++;
       }
-      if (reduceEnter != -1) {
+      if (reduceEnter != -1 && escapeCounter >= 2) {
         cur_string = cur_string.concat("\n\n");
       } else {
         while (escapeCounter >= 0) {
