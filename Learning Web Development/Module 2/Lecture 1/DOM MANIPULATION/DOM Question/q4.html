@@ -1,0 +1,90 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <select name="" id="">
+      <option value="none">none</option>
+      <option value="Thriller">Thriller</option>
+      <option value="Comedy">Comedy</option>
+      <option value="Action">Action</option>
+    </select>
+    <div class="movies">
+      <h3 class="heading"></h3>
+      <p class="price" data-category="Thriller"></p>
+    </div>
+    <div class="movies">
+      <h3 class="heading"></h3>
+      <p class="price" data-category="Comedy"></p>
+    </div>
+    <div class="movies">
+      <h3 class="heading"></h3>
+      <p class="price" data-category="Thriller"></p>
+    </div>
+    <div class="movies">
+      <h3 class="heading"></h3>
+      <p class="price" data-category="Comedy"></p>
+    </div>
+    <div class="movies">
+      <h3 class="heading"></h3>
+      <p class="price" data-category="Thriller"></p>
+    </div>
+    <div class="movies">
+      <h3 class="heading"></h3>
+      <p class="price" data-category="Action"></p>
+    </div>
+    <div class="movies">
+      <h3 class="heading"></h3>
+      <p class="price" data-category="Thriller"></p>
+    </div>
+    <div class="movies">
+      <h3 class="heading"></h3>
+      <p class="price" data-category="Comedy"></p>
+    </div>
+    <div class="movies">
+      <h3 class="heading"></h3>
+      <p class="price" data-category="Action"></p>
+    </div>
+    <div class="movies">
+      <h3 class="heading"></h3>
+      <p class="price" data-category="Comedy"></p>
+    </div>
+    <div class="movies">
+      <h3 class="heading"></h3>
+      <p class="price" data-category="Action"></p>
+    </div>
+    <div class="movies">
+      <h3 class="heading"></h3>
+      <p class="price" data-category="Thriller"></p>
+    </div>
+  </body>
+  <script>
+    let divs = document.querySelectorAll(".movies");
+    let i = 0;
+    for (let div of divs) {
+      div.querySelector(".heading").textContent = `Example-${++i}`;
+      div.querySelector(".price").textContent = `Rs ${
+        Math.floor(Math.random() * 10 + 1) * 100
+      }`;
+    }
+    let select = document.querySelector("select");
+    select.addEventListener("change", function () {
+      let movies = document.querySelectorAll(".movies");
+      let cCategory = select.value;
+      for (let movie of movies) {
+        let category = movie.querySelector("p").getAttribute("data-category");
+        if (cCategory == "none" || cCategory != category) {
+          movie.style.display = "none";
+        } else if (category == cCategory) {
+          movie.style.display = "block";
+        }
+      }
+    });
+  </script>
+</html>

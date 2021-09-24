@@ -1,0 +1,44 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Document</h1>
+    <script>
+      let p = document.createElement("h1");
+      p.textContent = "OK";
+      let body = document.querySelector("body");
+      body.appendChild(p);
+      setTimeout(function () {
+        p.textContent = "Fuck You";
+      }, 1000);
+      setTimeout(function () {
+        p.textContent = "No Really Fuck You";
+      }, 2000);
+      setTimeout(function () {
+        p.textContent = "Adios";
+      }, 3000);
+      setTimeout(function () {
+        p.textContent = "Fuck You MFKER For the last time I promise";
+      }, 4000);
+      setTimeout(function () {
+        p.textContent = "OK";
+      }, 5000);
+      setTimeout(function () {
+        p.style.color = "Red";
+      }, 5500);
+      setTimeout(function () {
+        p.textContent = "I going TO die Now";
+      }, 6500);
+      setTimeout(function () {
+        p.remove();
+      }, 8000);
+    </script>
+  </body>
+</html>
